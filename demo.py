@@ -1,11 +1,5 @@
-from visa_approval.logger import logging
-from visa_approval.exception import visaapprovalException
-import sys
+from visa_approval.pipline.training_pipeline import TrainPipleline
 
-logging.info("Wellcome to our custom logger")
-
-
-try:
-    a = 2/0
-except Exception as e:
-    raise visaapprovalException(e, sys)
+if __name__ == "__main__":
+    pipeline = TrainPipleline()  # Create an instance
+    pipeline.run_pipeline()      # Call the method on the instance
